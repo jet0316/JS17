@@ -1,0 +1,21 @@
+.main-header {
+	position: relative;
+
+}
+
+.menu-container:hover {
+	background-color: peachpuff;
+	cursor: default;
+	border-radius: 10px;
+}
+
+.menu-container {
+	display: inline-block;
+	padding: 10px; 
+}
+
+.restaurant-container {
+	background-color: gray;
+    border-radius: 10px;
+    display: inline-flex;
+}
