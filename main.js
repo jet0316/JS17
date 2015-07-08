@@ -63,9 +63,9 @@ Customer.prototype.create = function(){
 
 // Burrito Plate, a Guacamole Plate, and a Margarita Drink.
 
-var burrioPlate    = new Plate('Burrito', 'Delicious', 12.75, [' beef', ' cheese', ' hotsauce', ' beans'])
-var guacamolePlate = new Plate('Guacamole', 'Green', 7.25, [' advocatos', ' tomatos', ' onions', ' haberneros'])
-var quesadilla     = new Plate('Quesadilla', 'very Mexican', 10.50, [' cheese', ' chicken', ' pico de gallo'])
+var burrioPlate    = new Plate('Burrito', 'Delicious', 12, [' beef', ' cheese', ' hotsauce', ' beans'])
+var guacamolePlate = new Plate('Guacamole', 'Green', 7, [' advocatos', ' tomatos', ' onions', ' haberneros'])
+var quesadilla     = new Plate('Quesadilla', 'very Mexican', 10, [' cheese', ' chicken', ' pico de gallo'])
 var margaritaDrink = new Drink('Margarita', 'Fantastic', 5, [' tequilla', ' salt', ' sugar', ' more salt'])
 
 
@@ -90,19 +90,33 @@ $(document).on('ready', function() {
 
 	$('body').append('<div class="order-container"></div>');
 
-	var total = 0.00;
 
+	
+	var total = 0.00;
 
 	$('.order-container').append('<div> Order Total : $ <span class="total">' + total + '</span></div>');
 
+	
+	
 	$('body').on('click', '.price-button', function(){
 		var orderPrice = Number($(this).prev().text());
 		total += orderPrice;
 		console.log(total)
+
+		var orderName = $(this).siblings('.item-name').text()
+
+		$('.order-container').prepend('<p>' + orderName + '</p>')
 		$('.total').text(total)
 	})
 
 
+	$('.order-container').append('<button class="veto-button">Veto Order</button>')
+
+	$('.veto-button').on('click', function(){
+		total = 0
+		$('.total').text(total)
+
+	})
   
 });
 

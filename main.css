@@ -1,21 +1,33 @@
+
+body {
+	background-color: bisque;
+}
+
 .main-header {
 	position: relative;
 
 }
 
 .menu-container:hover {
-	background-color: peachpuff;
+	background-color: darkgray;
 	cursor: default;
-	border-radius: 10px;
 }
 
 .menu-container {
-	display: inline-block;
 	padding: 10px; 
+	border: 1px solid black;
 }
 
 .restaurant-container {
-	background-color: gray;
-    border-radius: 10px;
-    display: inline-flex;
+	background-color: white;
+    display: inline-block;
+}
+
+.order-container {
+	position: fixed;
+	left: 75%;
+	bottom: 10%;
+	background-color: white;
+    border: 1px solid black;
+    padding: 22px;
 }
